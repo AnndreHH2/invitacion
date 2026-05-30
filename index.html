@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Una invitación</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="heart"></canvas>
+
+  <main class="card" id="cuadroDialogo">
+    <h1>¡Holaaa Dayra!</h1>
+    <p id="mensajePrincipal">¿Te gustaría salir conmigo?</p>
+
+    <div class="buttons" id="botonesInicio">
+      <button id="btnSi">Sí</button>
+      <button id="btnNo">No</button>
+    </div>
+
+    <form id="formCita" class="form-cita oculto">
+      <label>
+        ¿Qué día puedes?
+        <select id="dia" required>
+          <option value="">Selecciona un día</option>
+          <option value="Viernes">Viernes</option>
+          <option value="Sábado">Sábado</option>
+          <option value="Domingo">Domingo</option>
+        </select>
+      </label>
+
+      <label>
+        ¿Qué te gustaría hacer?
+        <select id="plan" required>
+          <option value="">Selecciona una opción</option>
+          <option value="Ir por café">Ir por café</option>
+          <option value="Comer pizza">Comer pizza</option>
+          <option value="Comer hamburguesas">Comer hamburguesas</option>
+          <option value="Comer pasta">Ir a comer pasta</option>
+          <option value="Ir por helado">Ir por un helado (Cuando hace frío jaja)</option>
+          <option value="Ir a cenar">Ir a cenar cualquier cosa</option>
+          <option value="Hacer todo">¡¡Hacer todo!!</option>
+          <option value="Que tú elijas">Que tú elijas</option>
+        </select>
+      </label>
+
+      <label>
+        Algún comentario, lo que quieras decirme
+        <textarea id="comentario" placeholder="Opcional"></textarea>
+      </label>
+
+      <button type="submit">Enviar respuesta</button>
+    </form>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
