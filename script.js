@@ -29,21 +29,32 @@ const canvas = document.getElementById("heart");
 // BOTON NO SE ESCAPA
 // ============================
 
-btnNo.addEventListener("mouseover", function () {
-  const nuevaX = Math.random() * 260 - 130;
-  const nuevaY = Math.random() * 160 - 80;
+function moverBotonNo() {
+  const card = document.getElementById("cuadroDialogo");
+  const cardRect = card.getBoundingClientRect();
+  const btnRect = btnNo.getBoundingClientRect();
 
-  this.style.transform = `translate(${nuevaX}px, ${nuevaY}px)`;
+  const maxX = cardRect.width - btnRect.width - 20;
+  const maxY = cardRect.height - btnRect.height - 20;
+
+  const nuevaX = Math.random() * maxX - maxX / 2;
+  const nuevaY = Math.random() * maxY - maxY / 2;
+
+  btnNo.style.transform = `translate(${nuevaX}px, ${nuevaY}px)`;
+}
+
+btnNo.addEventListener("mouseover", moverBotonNo);
+
+btnNo.addEventListener("mouseenter", moverBotonNo);
+
+btnNo.addEventListener("touchstart", function (e) {
+  e.preventDefault();
+  moverBotonNo();
 });
 
-btnNo.addEventListener("click", function () {
-  Swal.fire({
-    title: "¿Segura? 😅",
-    text: "Yo digo que lo pienses una vez más.",
-    icon: "question",
-    confirmButtonText: "Está bien",
-    confirmButtonColor: "#2f2a28",
-  });
+btnNo.addEventListener("click", function (e) {
+  e.preventDefault();
+  moverBotonNo();
 });
 
 // ============================

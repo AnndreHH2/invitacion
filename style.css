@@ -71,7 +71,10 @@ button:hover {
   background: #eee5df;
   color: #2f2a28;
   position: relative;
-  transition: transform 0.08s ease-in-out;
+  transition: transform 0.05s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
 }
 
 .form-cita {
